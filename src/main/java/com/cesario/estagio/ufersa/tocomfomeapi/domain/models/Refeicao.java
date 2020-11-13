@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.time.OffsetDateTime;
 
 @Entity
-@Table(name = "tb_refeicoes")
+@Table(name = "refeicoes")
 @Getter @Setter @NoArgsConstructor
 public class Refeicao implements Serializable {
     private static final long serialVersionUID = 1L;
