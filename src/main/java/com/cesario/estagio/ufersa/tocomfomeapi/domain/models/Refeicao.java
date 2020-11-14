@@ -17,7 +17,7 @@ public class Refeicao implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Enumerated(EnumType.STRING)
@@ -29,4 +29,8 @@ public class Refeicao implements Serializable {
 
     @Column(name = "campi")
     private Campi campi;
+
+    @ManyToOne
+    @JoinColumn(name = "id_aluno")
+    private Aluno aluno;
 }

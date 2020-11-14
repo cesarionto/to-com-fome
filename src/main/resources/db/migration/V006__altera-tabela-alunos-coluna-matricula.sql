@@ -1,0 +1,1 @@
+alter table alunos alter column matricula bigint;

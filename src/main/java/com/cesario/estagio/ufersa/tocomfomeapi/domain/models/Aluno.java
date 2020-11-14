@@ -17,7 +17,7 @@ public class Aluno implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "matricula", nullable = false)
@@ -25,8 +25,5 @@ public class Aluno implements Serializable {
 
     @Column(name = "nome_completo", nullable = false)
     private String nomeCompleto;
-
-    @OneToMany(mappedBy = "aluno")
-    private List<Refeicao> refeicoes = new ArrayList<>();
 
 }

@@ -1,0 +1,1 @@
+alter table refeicoes add constraint fk_aluno foreign key (id_aluno) references alunos(id)
