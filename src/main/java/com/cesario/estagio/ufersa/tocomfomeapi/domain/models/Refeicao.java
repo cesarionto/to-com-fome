@@ -1,6 +1,7 @@
 package com.cesario.estagio.ufersa.tocomfomeapi.domain.models;
 
 import com.cesario.estagio.ufersa.tocomfomeapi.domain.enums.Campi;
+import com.cesario.estagio.ufersa.tocomfomeapi.domain.enums.StatusRefeicao;
 import com.cesario.estagio.ufersa.tocomfomeapi.domain.enums.TipoRefeicao;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,8 +28,13 @@ public class Refeicao implements Serializable {
     @Column(name = "data_refeicao")
     private OffsetDateTime dataRefeicao;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "campi")
     private Campi campi;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status_refeicao")
+    private StatusRefeicao statusRefeicao;
 
     @ManyToOne
     @JoinColumn(name = "id_aluno")

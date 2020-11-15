@@ -1,0 +1,1 @@
+alter table refeicoes add column status_refeicao varchar(20);
