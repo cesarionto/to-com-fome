@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 
 @Entity
@@ -26,7 +27,7 @@ public class Refeicao implements Serializable {
     private TipoRefeicao tipoRefeicao;
 
     @Column(name = "data_refeicao")
-    private OffsetDateTime dataRefeicao;
+    private LocalDate dataRefeicao;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "campi")

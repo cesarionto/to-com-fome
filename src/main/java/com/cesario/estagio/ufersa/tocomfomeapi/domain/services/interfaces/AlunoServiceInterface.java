@@ -7,8 +7,8 @@ import java.util.Optional;
 
 public interface AlunoServiceInterface {
     public Aluno save(Aluno aluno);
-    public void deletar(long id);
-    public Aluno alterar(long id);
+    public Aluno alterar(Aluno aluno);
     public List<Aluno> index();
     public void validarMatricula(long matricula);
+    public void validaId(long id);
 }

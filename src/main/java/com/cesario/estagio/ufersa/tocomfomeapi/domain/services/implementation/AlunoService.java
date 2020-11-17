@@ -29,13 +29,10 @@ public class AlunoService implements AlunoServiceInterface {
     }
 
     @Override
-    public void deletar(long id) {
-
-    }
-
-    @Override
-    public Aluno alterar(long id) {
-        return null;
+    public Aluno alterar(Aluno aluno) {
+        validaId(aluno.getId());
+        aluno.setNomeCompleto(aluno.getNomeCompleto().toUpperCase());
+        return alunoRepository.save(aluno);
     }
 
     @Override
@@ -50,4 +47,13 @@ public class AlunoService implements AlunoServiceInterface {
             throw new RegraNegocioException("Aluno já cadastrado na base de dados");
         }
     }
+
+    @Override
+    public void validaId(long id) {
+        boolean aluno = alunoRepository.existsById(id);
+        if(!aluno){
+            throw new RegraNegocioException("Não Existe nenhum aluno com esse identificador");
+        }
+    }
+
 }

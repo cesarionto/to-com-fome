@@ -41,4 +41,28 @@ public class AlunoServiceTeste {
                     alunoService.validarMatricula(2016021154);
                 });
     }
+
+    @Test
+    public void deveValidarId(){
+        alunoRepository.deleteAll();
+        Aluno aluno = new Aluno();
+        aluno.setMatricula(2016021154);
+        aluno.setNomeCompleto("Cesário Pereira Neto");
+        alunoRepository.save(aluno);
+        alunoService.validaId(1);
+    }
+
+    @Test
+    public void deveLancarExceptionSeAlunoNaoExistirPorId() throws RegraNegocioException{
+        alunoRepository.deleteAll();
+        Aluno aluno = new Aluno();
+        aluno.setMatricula(2016021154);
+        aluno.setNomeCompleto("Cesário Pereira Neto");
+        alunoRepository.save(aluno);
+
+        Exception exception = assertThrows(RegraNegocioException.class, ()->{
+            alunoService.validaId(2);
+        });
+    }
+
 }
