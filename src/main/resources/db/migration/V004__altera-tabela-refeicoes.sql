@@ -1,1 +1,0 @@
-alter table refeicoes add column id_aluno smallint not null;

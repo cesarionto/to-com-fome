@@ -1,1 +1,0 @@
-alter table alunos drop column refeicoesid;
