@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
-@ActiveProfiles("test")
+@ActiveProfiles("dev")
 public class AlunoServiceTeste {
 
     @Autowired

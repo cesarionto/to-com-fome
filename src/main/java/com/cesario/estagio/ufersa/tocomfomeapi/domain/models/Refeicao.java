@@ -13,7 +13,6 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "refeicoes")
-@Getter @Setter @NoArgsConstructor
 public class Refeicao implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -39,4 +38,55 @@ public class Refeicao implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_aluno")
     private Aluno aluno;
+
+    public Refeicao() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public TipoRefeicao getTipoRefeicao() {
+        return tipoRefeicao;
+    }
+
+    public void setTipoRefeicao(TipoRefeicao tipoRefeicao) {
+        this.tipoRefeicao = tipoRefeicao;
+    }
+
+    public LocalDate getDataRefeicao() {
+        return dataRefeicao;
+    }
+
+    public void setDataRefeicao(LocalDate dataRefeicao) {
+        this.dataRefeicao = dataRefeicao;
+    }
+
+    public Campi getCampi() {
+        return campi;
+    }
+
+    public void setCampi(Campi campi) {
+        this.campi = campi;
+    }
+
+    public StatusRefeicao getStatusRefeicao() {
+        return statusRefeicao;
+    }
+
+    public void setStatusRefeicao(StatusRefeicao statusRefeicao) {
+        this.statusRefeicao = statusRefeicao;
+    }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
 }
