@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlsn="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>To com Fome - Pagina Inicial</title>
+</head>
+<body>
+    <h1>Solicitar Refeicao</h1>
+    <form method="post" ACTION="">
+        <!-- Pegar os dados do aluno atraves da matricula.
+            id
+         -->
+        <p>
+            Informe sua Matricula:
+            <input type="text" name="matricula">
+        </p>
+        <p>
+            Data:
+            <input type="date" name="matricula">
+        </p>
+        <p>
+            Qual Refeição:
+            <select name="tipoRefeicao">
+                <option value="NULL" selected>-SELECIONE-</option>
+                <option value="ALMOCO">ALMOÇO</option>
+                <option value="JANTAR">JANTAR</option>
+            </select>
+        </p>
+        <p>
+            Qual Campi:
+            <select name="campi">
+                <option value="NULL" selected>-SELECIONE-</option>
+                <option value="ANGICOS">ANGICOS</option>
+                <option value="MOSSORO">MOSSORÓ</option>
+                <option value="CARAUBAS">CARAÚBAS</option>
+                <option value="PAU_DOS_FERROS">PAU DOS FERROS</option>
+            </select>
+        </p>
+        <button type="submit">Solicitar</button>
+    </form>
+</body>
+</html>
