@@ -3,13 +3,13 @@ package com.cesario.estagio.ufersa.tocomfomeapi.domain.models;
 import com.cesario.estagio.ufersa.tocomfomeapi.domain.enums.Campi;
 import com.cesario.estagio.ufersa.tocomfomeapi.domain.enums.StatusRefeicao;
 import com.cesario.estagio.ufersa.tocomfomeapi.domain.enums.TipoRefeicao;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "refeicoes")
@@ -25,7 +25,8 @@ public class Refeicao implements Serializable {
     private TipoRefeicao tipoRefeicao;
 
     @Column(name = "data_refeicao")
-    private LocalDate dataRefeicao;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private Date dataRefeicao;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "campi")
@@ -58,11 +59,11 @@ public class Refeicao implements Serializable {
         this.tipoRefeicao = tipoRefeicao;
     }
 
-    public LocalDate getDataRefeicao() {
+    public Date getDataRefeicao() {
         return dataRefeicao;
     }
 
-    public void setDataRefeicao(LocalDate dataRefeicao) {
+    public void setDataRefeicao(Date dataRefeicao) {
         this.dataRefeicao = dataRefeicao;
     }
 
