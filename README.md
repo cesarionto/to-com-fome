@@ -17,7 +17,7 @@
 - Instale o [Intellij Community](https://www.jetbrains.com/pt-br/idea/download/)
 - Importe o projeto utilizando o Maven Project
 - (Opcional) Instale o [PostgreSQL v12](https://www.postgresql.org/download/)
-- Va até [applicatio.properties](https://github.com/cesarionto/to-com-fome-api/blob/master/src/main/resources/application.properties) e troque o spring.profiles.active=prod para spring.profiles.active=dev
+- Va até [application.properties](https://github.com/cesarionto/to-com-fome-api/blob/master/src/main/resources/application.properties) e troque o spring.profiles.active=prod para spring.profiles.active=dev
 
 - Pronto, ja pode executar :)
 
