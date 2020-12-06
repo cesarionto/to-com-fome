@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlsn="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>To com Fome - Cadastro de Alunos</title>
+</head>
+<body>
+<h1>Cadastro de Alunos</h1>
+<a href="/index/administrativo">Voltar</a>
+<fieldset>
+    <legend>Dados do Aluno</legend>
+    <form method="post" action="alunos">
+        <p>Matricula: <input type="text" name="matricula"></p>
+        <p>Nome Completo: <input type="text" name="nomeCompleto"></p>
+        <button type="submit">Salvar</button>
+    </form>
+</fieldset>
+<!-- Acho que não precisa ser form -->
+</body>
+</html>

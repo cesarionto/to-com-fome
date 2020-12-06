@@ -11,4 +11,9 @@ public class IndexController {
     public String index(){
         return "index";
     }
+
+    @GetMapping("administrativo/cadastro")
+    public String cadastro(){
+        return "aluno/cadastrar-aluno";
+    }
 }

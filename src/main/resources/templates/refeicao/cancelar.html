@@ -3,9 +3,48 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>To com Fome - Pagina Inicial</title>
+    <title>To com Fome - Cancelar Refeição</title>
 </head>
 <body>
-    cancelar
+<h1>Cancelar Refeição</h1>
+<form method="post" ACTION="">
+    <p>
+        Informe sua Matricula*:
+        <input type="text" name="matricula">
+    </p>
+    <p>
+        Data*:
+        <input type="text" name="dataRefeicao" id="dataRefeicao" />
+    </p>
+    <p>
+        Qual Refeição*:
+        <select name="tipoRefeicao">
+            <option value="NULL" selected>-SELECIONE-</option>
+            <option value="ALMOCO">ALMOÇO</option>
+            <option value="JANTAR">JANTAR</option>
+        </select>
+    </p>
+    <p>
+        Qual Campi*:
+        <select name="campi">
+            <option value="NULL" selected>-SELECIONE-</option>
+            <option value="ANGICOS">ANGICOS</option>
+            <option value="MOSSORO">MOSSORÓ</option>
+            <option value="CARAUBAS">CARAÚBAS</option>
+            <option value="PAU_DOS_FERROS">PAU DOS FERROS</option>
+        </select>
+    </p>
+    <button type="submit">Cancelar</button>
+</form>
+
+
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+<SCRIPT language="javascript">
+    $(document).ready(function () {
+        $('#dataRefeicao').mask('99/99/9999');
+        return false;
+    });
+</SCRIPT>
 </body>
 </html>

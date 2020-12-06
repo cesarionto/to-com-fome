@@ -6,7 +6,7 @@
     <title>To com Fome - Pagina Inicial</title>
 </head>
 <body>
-    <h1>Solicitar Refeicao</h1>
+    <h1>Solicitar Refeição</h1>
     <form method="post" ACTION="">
         <!-- Pegar os dados do aluno atraves da matricula.
             id
@@ -17,7 +17,7 @@
         </p>
         <p>
             Data*:
-            <input type="text" name="dataRefeicao">
+            <input type="text" name="dataRefeicao" id="dataRefeicao" />
         </p>
         <p>
             Qual Refeição*:
@@ -39,5 +39,15 @@
         </p>
         <button type="submit">Solicitar</button>
     </form>
+
+
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <SCRIPT language="javascript">
+        $(document).ready(function () {
+            $('#dataRefeicao').mask('99/99/9999');
+            return false;
+        });
+    </SCRIPT>
 </body>
 </html>
