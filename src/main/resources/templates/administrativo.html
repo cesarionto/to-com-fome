@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlsn="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>To com Fome - Painel Administrativo</title>
+</head>
+<body>
+<h1>Administrativo</h1>
+<p>Quantidade de Solicitações do Dia:</p>
+<table>
+    <tr th:each="almoco : ${almoco}">
+        Almoço:
+        <td th:text="${almoco}"></td>
+    </tr>
+</table>
+<table>
+    <tr th:each="jantar : ${jantar}">
+        Jantar:
+        <td th:text="${jantar}"></td>
+    </tr>
+</table>
+
+<a href="administrativo/cadastro">Cadastrar Alunos</a>
+<a href="/index">Sair</a>
+
+</body>
+</html>
