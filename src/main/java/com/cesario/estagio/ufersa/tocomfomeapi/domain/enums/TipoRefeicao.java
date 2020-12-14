@@ -2,5 +2,5 @@ package com.cesario.estagio.ufersa.tocomfomeapi.domain.enums;
 
 public enum TipoRefeicao {
     ALMOCO,
-    JANTA
+    JANTAR
 }
