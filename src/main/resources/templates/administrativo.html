@@ -8,19 +8,11 @@
 <body>
 <h1>Administrativo</h1>
 <p>Quantidade de Solicitações do Dia:</p>
-<table>
-    <tr th:each="almoco : ${almoco}">
-        Almoço:
-        <td th:text="${almoco}"></td>
-    </tr>
-</table>
-<table>
-    <tr th:each="jantar : ${jantar}">
-        Jantar:
-        <td th:text="${jantar}"></td>
-    </tr>
-</table>
-
+<p>Almoço: </p>
+<span th:text="${almoco}"></span>
+<p>Jantar: </p>
+<span th:text="${jantar}"></span>
+<br>
 <a href="administrativo/cadastro">Cadastrar Alunos</a>
 <a href="/index">Sair</a>
 

@@ -25,8 +25,7 @@ public class Refeicao implements Serializable {
     private TipoRefeicao tipoRefeicao;
 
     @Column(name = "data_refeicao")
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date dataRefeicao;
+    private LocalDate dataRefeicao;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "campi")
@@ -59,15 +58,15 @@ public class Refeicao implements Serializable {
         this.tipoRefeicao = tipoRefeicao;
     }
 
-    public Date getDataRefeicao() {
-        return dataRefeicao;
-    }
+    public LocalDate getDataRefeicao() {
+		return dataRefeicao;
+	}
 
-    public void setDataRefeicao(Date dataRefeicao) {
-        this.dataRefeicao = dataRefeicao;
-    }
+	public void setDataRefeicao(LocalDate dataRefeicao) {
+		this.dataRefeicao = dataRefeicao;
+	}
 
-    public Campi getCampi() {
+	public Campi getCampi() {
         return campi;
     }
 
