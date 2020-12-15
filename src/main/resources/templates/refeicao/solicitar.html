@@ -1,44 +1,78 @@
 <!DOCTYPE html>
 <html xmlsn="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>To com Fome - Pagina Inicial</title>
+
+<head th:replace="fragments :: html_head">
+    <title>Solicitar</title>
 </head>
 <body>
-    <h1>Solicitar Refeição</h1>
-    <form method="post" ACTION="">
-        <!-- Pegar os dados do aluno atraves da matricula.
-            id
-         -->
-        <p>
-            Informe sua Matricula*:
-            <input type="text" name="matricula">
-        </p>
-        <p>
-            Data*:
-            <input type="text" name="dataRefeicao" id="dataRefeicao" />
-        </p>
-        <p>
-            Qual Refeição*:
-            <select name="tipoRefeicao">
-                <option value="NULL" selected>-SELECIONE-</option>
-                <option value="ALMOCO">ALMOÇO</option>
-                <option value="JANTAR">JANTAR</option>
-            </select>
-        </p>
-        <p>
-            Qual Campi*:
-            <select name="campi">
-                <option value="NULL" selected>-SELECIONE-</option>
-                <option value="ANGICOS">ANGICOS</option>
-                <option value="MOSSORO">MOSSORÓ</option>
-                <option value="CARAUBAS">CARAÚBAS</option>
-                <option value="PAU_DOS_FERROS">PAU DOS FERROS</option>
-            </select>
-        </p>
-        <button type="submit">Solicitar</button>
-    </form>
+<div th:replace="fragments :: navbar" />
+<div class="page-section" id="contact">
+    <div class="container">
+        <!-- Contact Section Heading-->
+        <br><br>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Solicitar refeição</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Contact Section Form-->
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
+                <form method="post" ACTION="">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <label>Matrícula</label>
+                            <input class="form-control" id="matricula" name="matricula" type="text" placeholder="Matrícula" required="required" data-validation-required-message="Informe sua matrícula" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <label>Data</label>
+                            <input class="form-control" id="dataRefeicao" name="dataRefeicao" type="text" placeholder="Data" required="required" data-validation-required-message="Informe a data da solicitação" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <br>
+                        <p style="color: #75757d; font-size: 18pt">Tipo</p>
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <select name="tipoRefeicao" class="form-control" placeholder="Tipo da refeição" data-validation-required-message="Almoço ou Jantar">
+                                <option value="NULL" selected>-SELECIONE-</option>
+                                <option value="ALMOCO">ALMOÇO</option>
+                                <option value="JANTAR">JANTAR</option>
+                            </select>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <br>
+                        <p style="color: #75757d; font-size: 18pt">Campi</p>
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <select name="campi" class="form-control" placeholder="Tipo da refeição" data-validation-required-message="Campi">
+                                <option value="NULL" selected>-SELECIONE-</option>
+                                <option value="ANGICOS">ANGICOS</option>
+                                <!--
+                                <option value="MOSSORO">MOSSORÓ</option>
+                                <option value="CARAUBAS">CARAÚBAS</option>
+                                <option value="PAU_DOS_FERROS">PAU DOS FERROS</option>
+                                -->
+                            </select>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <br />
+                    <div id="success"></div>
+                    <div class="form-group"><button class="btn btn-primary btn-xl" type="submit">Solicitar</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
