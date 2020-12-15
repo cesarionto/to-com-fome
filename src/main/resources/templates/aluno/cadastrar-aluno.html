@@ -1,21 +1,48 @@
 <!DOCTYPE html>
 <html xmlsn="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>To com Fome - Cadastro de Alunos</title>
+
+<head th:replace="fragments :: html_head">
+    <title>Solicitar</title>
 </head>
 <body>
-<h1>Cadastro de Alunos</h1>
-<a href="/index/administrativo">Voltar</a>
-<fieldset>
-    <legend>Dados do Aluno</legend>
-    <form method="post" action="alunos">
-        <p>Matricula: <input type="text" name="matricula"></p>
-        <p>Nome Completo: <input type="text" name="nomeCompleto"></p>
-        <button type="submit">Salvar</button>
-    </form>
-</fieldset>
-<!-- Acho que não precisa ser form -->
+<div th:replace="fragments :: navbar" />
+<div class="page-section" id="contact">
+    <div class="container">
+        <!-- Contact Section Heading-->
+        <br><br>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Cadastro de alunos</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Contact Section Form-->
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
+                <form method="post" ACTION="alunos">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <label>Matrícula</label>
+                            <input class="form-control" id="matricula" name="matricula" type="text" placeholder="Matrícula" required="required" data-validation-required-message="Informe sua matrícula" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <label>Nome Completo</label>
+                            <input class="form-control" id="nomeCompleto" name="nomeCompleto" type="text" placeholder="Nome completo" required="required" data-validation-required-message="Informe o nome completo" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <br />
+                    <div id="success"></div>
+                    <div class="form-group"><button class="btn btn-primary btn-xl" type="submit">Cadastrar</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
