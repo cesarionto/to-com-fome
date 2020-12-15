@@ -1,20 +1,60 @@
 <!DOCTYPE html>
 <html xmlsn="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>To com Fome - Painel Administrativo</title>
+
+<head th:replace="fragments :: html_head">
+    <title>Administrativo</title>
 </head>
 <body>
-<h1>Administrativo</h1>
-<p>Quantidade de Solicitações do Dia:</p>
-<p>Almoço: </p>
-<span th:text="${almoco}"></span>
-<p>Jantar: </p>
-<span th:text="${jantar}"></span>
-<br>
-<a href="administrativo/cadastro">Cadastrar Alunos</a>
-<a href="/index">Sair</a>
+    <div th:replace="fragments :: navbar" />
+    <div class="container">
+    <div class="page-section" id="adm">
+            <!-- Contact Section Heading-->
+        <br><br>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Administrativo</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Contact Section Form-->
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
+                    <br>
+                    <h3 class="masthead-subheading font-weight-light mb-0 text-center">Quantidade de Solicitações do Dia</h3>
+                </div>
+
+            </div>
+        <br>
+            <div class="row">
+                <div class="col-md-6 col-lg-6 mb-5">
+                    <div class="portfolio-item mx-auto">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="/assets/img/portfolio/dinner.svg" alt="" />
+                        <h4>Almoço: </h4>
+                        <h4 th:text="${almoco}"></h4>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 mb-5">
+                    <div class="portfolio-item mx-auto">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="/assets/img/portfolio/food2.svg" alt="" />
+                        <h4>Jantar: </h4>
+                        <h4 th:text="${jantar}"></h4>
+                    </div>
+                </div>
+            </div>
+    </div>
+        <div class="text-center">
+            <a class="btn btn-outline-dark mx-1" href="administrativo/cadastro">Cadastrar Alunos</a>
+            <a class="btn btn-outline-dark mx-1" href="/index">Sair</a>
+        </div>
+
+    </div>
 
 </body>
 </html>
