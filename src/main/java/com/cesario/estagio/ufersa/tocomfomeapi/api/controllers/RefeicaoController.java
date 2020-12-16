@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.jsf.FacesContextUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
@@ -36,12 +37,14 @@ public class RefeicaoController {
     public String Solicitar(Refeicao refeicao, HttpServletRequest httpServletRequest){
         long matricula = Long.parseLong(httpServletRequest.getParameter("matricula"));
         System.out.println("Eu sou a data" + refeicao.getDataRefeicao());
-        Optional<Aluno> aluno = Optional.ofNullable(alunoRepository.findAlunoByMatricula(matricula).orElseThrow(() -> new RegraNegocioException("Aluno Não Cadastrado")));
-        if (aluno.isPresent())
+        Optional<Aluno> aluno = /*Optional.ofNullable(*/alunoRepository.findAlunoByMatricula(matricula)/*.orElseThrow(() -> new RegraNegocioException("Aluno Não Cadastrado")))*/;
+        if (aluno.isPresent()) {
             refeicao.setAluno(aluno.get());
             refeicao.setStatusRefeicao(StatusRefeicao.ATIVA);
             refeicaoRepository.save(refeicao);
             return "redirect:/index";
+        }
+		return "ERRORalunoNaoCadastrado";
     }
 
     @GetMapping("/cancelar")
